@@ -1,4 +1,4 @@
-# spider.py
+# spider.py (Guilhem Mizrahi)
 
 This script is a web crawler in python3.
 
@@ -17,4 +17,21 @@ Then run the script providing the complete url and the requests limit.
 
 ```
 python3 spider.py http://example.com 15
+```
+
+# stephjspider.py (Stephen Jones)
+
+This script will harvests resources on a webpage.
+
+## How it works
+
+Takes a URL specified by the user. Get the source code, harvest the links and images and store them in a specific file (/tmp/Web_Crawler/Image_links.txt).
+To select which target file you want to use and which tags you want to harvest you can change the syntax in the code.
+
+```
+touch /tmp/Web_Crawler/Image_links.txt
+```
+Then run the script.
+```
+python3 stephjspider.py
 ```
