@@ -13,14 +13,14 @@ from bs4 import BeautifulSoup
 
 def get_html(url):
     '''
-    This function will retreive the html code from the webpage situated at URL
+    This function will retreive the html code from the webpage at URL
     '''
     try:
-        r = requests.get(url) # create and submit a get request
+        r = requests.get(url) # submit a get request
         r_html=r.text
         return(r_html)
     except:
-        # if the request could be submitted then the url is invalid
+        # if the request could not be submitted then the url is invalid
         return(-1)
 
 def save_code(html_code, file_name):
@@ -37,8 +37,8 @@ def get_links(html_code):
     '''
     soup=BeautifulSoup(html_code, 'html.parser')
     links_list=[]
-    for link in soup.find_all('a'):
-        links_list.append(link.get('href'))
+    for link in soup.find_all('a'): # html tag for links is a
+        links_list.append(link.get('href')) # url for the link is in the href parameter
     return(links_list)
 
 def build_url(url, referrer):
